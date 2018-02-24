@@ -1,0 +1,23 @@
+CREATE TABLE users(
+    username    varchar(25) PRIMARY KEY NOT NULL,
+    email	    varchar(50) NOT NULL,
+    password    varchar(25) NOT NULL,
+    age			smallint NOT NULL,
+    height		smallint NOT NULL,
+    weight		smallint NOT NULL
+);
+
+CREATE TABLE food_calories(
+    food_name 		varchar(50) PRIMARY KEY NOT NULL,
+    calory_amount	smallint NOT NULL
+);
+
+CREATE TABLE activity_calories(
+    activity_id		serial PRIMARY KEY NOT NULL,
+    username   		varchar(50) NOT NULL,
+    calory_type		char(1) NOT NULL,
+    calory_amount	smallint NOT NULL,
+    activity_time	timestamp
+);
+
+ALTER TABLE activity_calories ALTER COLUMN activity_time SET DEFAULT now();
