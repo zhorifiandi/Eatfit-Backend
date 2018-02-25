@@ -1,6 +1,8 @@
 from app import app
 from flask import request
 import postgresql
+from flask import jsonify
+import json
 
 @app.route('/')
 
@@ -16,7 +18,7 @@ def login():
     if(request.method != 'POST'):
         return 'Request is not allowed, use POST'
     else:
-        postgres_obj = postgresql.PostgreSQL()
+        # postgres_obj = postgresql.PostgreSQL()
         login_dictionary = {}
 
         if('password' in request.form):
@@ -31,7 +33,10 @@ def login():
         else:
             return 'Missing parameter - email/username'
 
-        return postgres_obj.authenticate(login_dictionary)
+        return jsonify(
+            msg=json.dumps(login_dictionary)
+        )
+        # return postgres_obj.authenticate(login_dictionary)
 
 @app.route('/signup', methods = ['POST'])
 def signup():
