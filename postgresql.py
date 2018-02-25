@@ -17,7 +17,8 @@ class PostgreSQL:
 
     @staticmethod
     def _connect():
-        url = config.Config.DATABASE_URL
+        # url = config.Config.DATABASE_URL
+        url = 'postgresql://eatfitadmin@eatfit-db:Lerpekadut_82@eatfit-db.postgres.database.azure.com:5432/eatfit'
         con = sqlalchemy.create_engine(url, client_encoding='utf8')
         meta = sqlalchemy.MetaData(bind=con, reflect=True)
 
