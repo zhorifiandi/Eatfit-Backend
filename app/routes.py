@@ -4,9 +4,12 @@ import postgresql
 
 @app.route('/')
 
-@app.route('/index', methods = ['GET'])
+@app.route('/index', methods = ['GET', 'POST'])
 def index():
-    return 'Hello, World! - PaChill~~~'
+    if(request.method == 'GET'):
+        return 'GET ACCEPTED'
+    elif(request.method == 'POST'):
+        return 'POST ACCEPTED'
 
 @app.route('/login', methods = ['GET', 'POST'])
 def login():
