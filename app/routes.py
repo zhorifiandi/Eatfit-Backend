@@ -18,7 +18,7 @@ def login():
     if(request.method != 'POST'):
         return 'Request is not allowed, use POST'
     else:
-        # postgres_obj = postgresql.PostgreSQL()
+        postgres_obj = postgresql.PostgreSQL()
         login_dictionary = {}
 
         if('password' in request.form):
