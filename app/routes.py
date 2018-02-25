@@ -19,23 +19,24 @@ def login():
         return 'Request is not allowed, use POST'
     else:
         postgres_obj = postgresql.PostgreSQL()
-        login_dictionary = {}
-
-        if('password' in request.form):
-            login_dictionary['password'] = request.form['password']
-        else:
-            return 'Missing parameter - password'
-
-        if('username' in request.form):
-            login_dictionary['username'] = request.form['username']
-        elif('email' in request.form):
-            login_dictionary['email'] = request.form['email']
-        else:
-            return 'Missing parameter - email/username'
-
-        return jsonify(
-            msg=json.dumps(login_dictionary)
-        )
+        return str(postgres_obj.con)
+        # login_dictionary = {}
+        #
+        # if('password' in request.form):
+        #     login_dictionary['password'] = request.form['password']
+        # else:
+        #     return 'Missing parameter - password'
+        #
+        # if('username' in request.form):
+        #     login_dictionary['username'] = request.form['username']
+        # elif('email' in request.form):
+        #     login_dictionary['email'] = request.form['email']
+        # else:
+        #     return 'Missing parameter - email/username'
+        #
+        # return jsonify(
+        #     msg=json.dumps(login_dictionary)
+        # )
         # return postgres_obj.authenticate(login_dictionary)
 
 @app.route('/signup', methods = ['POST'])
