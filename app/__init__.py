@@ -9,3 +9,8 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
 from app import routes, models
+
+import logging
+handler = logging.FileHandler('error_log.txt')  # errors logged to this file
+handler.setLevel(logging.ERROR)  # only log errors and above
+app.logger.addHandler(handler)  # attach the handler to the app's logger
