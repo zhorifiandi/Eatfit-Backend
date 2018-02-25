@@ -1,6 +1,5 @@
 import os
 basedir = os.path.abspath(os.path.dirname(__file__))
-DATABASE_URL = 'postgresql://eatfitadmin@eatfit-db:Lerpekadut_82@eatfit-db.postgres.database.azure.com:5432/eatfit'
 
 class Config(object):
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'you-will-never-guess'
