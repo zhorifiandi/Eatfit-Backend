@@ -68,26 +68,29 @@ class PostgreSQL:
     #   'password' : 'lerpekadutanjing'
     # }
     def authenticate(self, login_dictionary):
-        if('username' in login_dictionary):
-            clause = self.users_table.select().where(
-                self.users_table.c.username == login_dictionary['username']
-            )
-            user = self.con.execute(clause).fetchone()
-        elif('email' in login_dictionary):
-            clause = self.users_table.select().where(
-                self.users_table.c.email == login_dictionary['email']
-            )
-            user = self.con.execute(clause).fetchone()
-        else:
-            return 'Authentication error - missing username/email'
-
-        user_json = json.dumps(user.items())
-        if(user['password'] == login_dictionary['password']):
-            return jsonify(
-                msg='Authentication succesful',
-                user=user_json
-            )
-        else:
-            return jsonify(
-                msg='Authentication failed - wrong password'
-            )
+        # if('username' in login_dictionary):
+        #     clause = self.users_table.select().where(
+        #         self.users_table.c.username == login_dictionary['username']
+        #     )
+        #     user = self.con.execute(clause).fetchone()
+        # elif('email' in login_dictionary):
+        #     clause = self.users_table.select().where(
+        #         self.users_table.c.email == login_dictionary['email']
+        #     )
+        #     user = self.con.execute(clause).fetchone()
+        # else:
+        #     return 'Authentication error - missing username/email'
+        #
+        # user_json = json.dumps(user.items())
+        # if(user['password'] == login_dictionary['password']):
+        #     return jsonify(
+        #         msg='Authentication succesful',
+        #         user=user_json
+        #     )
+        # else:
+        #     return jsonify(
+        #         msg='Authentication failed - wrong password'
+        #     )
+        return jsonify(
+            msg='Authentication failed - wrong password'
+        )
