@@ -1,7 +1,7 @@
 import os
 import sqlalchemy
 import config
-import pandas as pd
+# import pandas as pd
 import json
 from flask import jsonify
 
@@ -52,15 +52,15 @@ class PostgreSQL:
     # Sample use
     # postgres_obj.batch_insert_food_calories('List Makanan.csv')
     # Csv header : no, food_meal, calory_amount
-    def batch_insert_food_calories(self, csv_path):
-        csv_dataframe = pd.read_csv(csv_path)
-
-        for index, series in csv_dataframe.iterrows():
-            food_calory_dict = {}
-            for elem in series.iteritems():
-                if(elem[0] != 'no'):
-                    food_calory_dict[elem[0]] = elem[1]
-            self.insert_food_calory(food_calory_dict)
+    # def batch_insert_food_calories(self, csv_path):
+    #     csv_dataframe = pd.read_csv(csv_path)
+    #
+    #     for index, series in csv_dataframe.iterrows():
+    #         food_calory_dict = {}
+    #         for elem in series.iteritems():
+    #             if(elem[0] != 'no'):
+    #                 food_calory_dict[elem[0]] = elem[1]
+    #         self.insert_food_calory(food_calory_dict)
 
     # Login sample use
     # postgres_obj.authenticate {
