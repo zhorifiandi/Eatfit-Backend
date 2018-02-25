@@ -2,6 +2,7 @@ import os
 import sqlalchemy
 import config
 import pandas as pd
+import json
 from flask import jsonify
 
 # Sample use
@@ -32,6 +33,11 @@ class PostgreSQL:
     def insert_user(self, user_dictionary):
         clause = self.users_table.insert().values(user_dictionary)
         self.con.execute(clause)
+        user_json = json.dumps(user_dictionary)
+        return jsonify (
+            msg='Signup succesful',
+            user=user_json
+        )
 
     # Sample use
     # postgres_obj.insert_food_calory({
@@ -75,10 +81,11 @@ class PostgreSQL:
         else:
             return 'Authentication error - missing username/email'
 
+        user_json = json.dumps(user.items())
         if(user['password'] == login_dictionary['password']):
             return jsonify(
                 msg='Authentication succesful',
-                username=user['username']
+                user=user_json
             )
         else:
             return jsonify(

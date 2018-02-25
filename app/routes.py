@@ -26,3 +26,25 @@ def login():
         return 'Missing parameter - email/username'
 
     return postgres_obj.authenticate(login_dictionary)
+
+@app.route('/signup', methods = ['POST'])
+def signup():
+    postgres_obj = postgresql.PostgreSQL()
+    signup_dictionary = {}
+
+    if('username' in request.form):
+        signup_dictionary['username'] = request.form['username']
+    else:
+        return 'Missing parameter - username'
+
+    if('email' in request.form):
+        signup_dictionary['email'] = request.form['email']
+    else:
+        return 'Missing parameter - email'
+
+    if('password' in request.form):
+        signup_dictionary['password'] = request.form['password']
+    else:
+        return 'Missing parameter - password'
+
+    return postgres_obj.insert_user(signup_dictionary)
