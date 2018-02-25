@@ -1,16 +1,16 @@
 import os
 import sqlalchemy
 import config
-# from flask import current_app
+import pandas as pd
 
 class PostgreSQL:
     def __init__(self):
         self.con, self.meta = self._connect()
-        # self.users_table = self.meta.tables['users']
-        # self.orders_table = self.meta.tables['orders']
-        # self.menus_table = self.meta.tables['menus']
-        # self.stocks_table = self.meta.tables['stocks']
-        # self.schedules_table = self.meta.tables['schedules']
+        self.food_calories_table = self.meta.tables['food_calories']
+        self.activity_calories_table = self.meta.tables['activity_calories']
+        self.users_table = self.meta.tables['users']
+        # Sample use
+        # postgres_obj = postgresql.PostgreSQL()
 
     @staticmethod
     def _connect():
@@ -20,6 +20,28 @@ class PostgreSQL:
 
         return con, meta
 
+    # Insert
+
+    def insert_food_calory(self, food_calory_dictionary):
+        clause = self.food_calories_table.insert().values(food_calory_dictionary)
+        self.con.execute(clause)
+        # Sample use
+        # postgres_obj.insert_food_calory({
+        #     'food_name' : 'Nasi Goreng',
+        #     'calory_amount' : 250
+        # })
+
+    # Csv header : no, food_meal, calory_amount
+
+    def batch_insert_food_calories(self, csv_path):
+        csv_dataframe = pd.read_csv(csv_path)
+
+        for index, series in csv_dataframe.iterrows():
+            food_calory_dict = {}
+            for elem in series.iteritems():
+                if(elem[0] != 'no'):
+                    food_calory_dict[elem[0]] = elem[1]
+            self.insert_food_calory(food_calory_dict)
     # Menus
     # def get_menus(self):
     #     raw_menus = self.con.execute(self.menus_table.select()).fetchall()
@@ -63,12 +85,5 @@ class PostgreSQL:
 
 if __name__ == "__main__":
     postgres_obj = PostgreSQL()
-    raw_data = postgres_obj.con.execute(postgres_obj.meta.tables['food_calories'].select()).fetchall()
-    if (raw_data == None):
-        print('Empty record')
-    else:
-        print('Ada')
-        print(raw_data)
-        for res in raw_data:
-            food_name, calory_amount = res
-            print(food_name, calory_amount)
+    # Batch insert
+    # postgres_obj.batch_insert_food_calories("List Makanan.csv")

@@ -1,53 +1,53 @@
-﻿No;Meal;Calories/ Serving
-1;Instant Noodle/Ramen;190
-2;Fried Chicken (KFC);290
-3;Bread Toast;313
-4;Beef Curry;333
-5;Peking Duck;250
-6;Rendang;336
-7;Hamburger ;562
-8;Ice Cream;144
-9;Donuts;81
-10;Oxtail Soup;150
-11;Pizza;285
-12;Chicken Porridge;294
-13;Milk and Cereal;270
-14;Beef Steak;679
-15;French Fries;340
-16;Doner Kebab Wrap;620
-17;Spaghetti Carbonara;581
-18;Grilled Fish;300
-19;Vegetable Salad;26
-20;Fruit Salad;124
-21;Maple Pancake;299
-22;Chocolate Bar;406
-23;White Steamed Rice;205
-24;Shrimp Stir Fry;299
-25;Fried Egg;90
-26;Sushi (6 pcs);250
-27;Boiled Egg;78
-28;Fried Calamari;296
-29;Hot Dog;151
-30;Green Beans (Buncis);31
-31;Spinach;23
-32;Fried Noodle;280
-33;Satay;365
-34;Nasi Goreng;484
-35;Ayam Pop;265
-36;Sate Padang;326
-37;Soto Madura;152
-38;Gado-gado;255
-39;Tempe Mendoan;149
-40;Tahu Sumedang;282
-41;Sop Kaki Kambing;353
-42;Surabi;180
-43;Gudeg ;590
-44;Pempek;384
-45;Batagor;506
-46;Sayur Asem;88
-47;Rawon;287
-48;Gepuk Sapi;156
-49;Pepes Ikan;166
-50;Oseng Jamur;28
-51;Ikan Goreng;59
-52;Mie Bakso;342
+﻿no,food_name,calory_amount
+1,Instant Noodle/Ramen,190
+2,Fried Chicken (KFC),290
+3,Bread Toast,313
+4,Beef Curry,333
+5,Peking Duck,250
+6,Rendang,336
+7,Hamburger ,562
+8,Ice Cream,144
+9,Donuts,81
+10,Oxtail Soup,150
+11,Pizza,285
+12,Chicken Porridge,294
+13,Milk and Cereal,270
+14,Beef Steak,679
+15,French Fries,340
+16,Doner Kebab Wrap,620
+17,Spaghetti Carbonara,581
+18,Grilled Fish,300
+19,Vegetable Salad,26
+20,Fruit Salad,124
+21,Maple Pancake,299
+22,Chocolate Bar,406
+23,White Steamed Rice,205
+24,Shrimp Stir Fry,299
+25,Fried Egg,90
+26,Sushi (6 pcs),250
+27,Boiled Egg,78
+28,Fried Calamari,296
+29,Hot Dog,151
+30,Green Beans (Buncis),31
+31,Spinach,23
+32,Fried Noodle,280
+33,Satay,365
+34,Nasi Goreng,484
+35,Ayam Pop,265
+36,Sate Padang,326
+37,Soto Madura,152
+38,Gado-gado,255
+39,Tempe Mendoan,149
+40,Tahu Sumedang,282
+41,Sop Kaki Kambing,353
+42,Surabi,180
+43,Gudeg ,590
+44,Pempek,384
+45,Batagor,506
+46,Sayur Asem,88
+47,Rawon,287
+48,Gepuk Sapi,156
+49,Pepes Ikan,166
+50,Oseng Jamur,28
+51,Ikan Goreng,59
+52,Mie Bakso,342

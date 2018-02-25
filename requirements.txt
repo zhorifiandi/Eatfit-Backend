@@ -1,3 +1,4 @@
 Flask==0.12.1
 flask-sqlalchemy
 flask-migrate
+pandas==0.22.0
