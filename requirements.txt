@@ -1,4 +1,4 @@
 Flask==0.12.1
 flask-sqlalchemy
 flask-migrate
-git+https://github.com/nwcell/psycopg2-windows.git@win64-py34#egg=psycopg2
+git+https://github.com/nwcell/psycopg2-windows.git@win32-py34#egg=psycopg2
